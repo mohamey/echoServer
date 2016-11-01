@@ -1,6 +1,6 @@
 import socket
 
-server_address = ('127.0.0.1', 8000)
+server_address = ('10.62.0.174', 8000)
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sock.settimeout(1)
