@@ -45,3 +45,8 @@ docker run mohamey/echoclient
 ```
 
 Please note the echo client is hardcoded to point to my DebianJessie node, so you __will__ need to update the client.py file and rebuild a docker image.
+
+## Docker Image Notes
+Just to reiterate the points made above:
+* The PHP docker image runs a server that listens on port _8000_. You can expose port 8000 on whatever port you wish on the host machine, however you must modify the client python script if you don't expose the php server on port 8000.
+* The python image is hardcoded to send requests to the ip of my DebianJessie node on SCSSNebula.
