@@ -9,13 +9,14 @@ Consists of the one python3 file, `client.py`. It is hard-coded to send the same
 ### Run Client
 To run the client, simply execute the command
 ```
-python3 client.py
+python3 client.py someMessage
 ```
 
 Or alternatively, you can run the docker image as follows:
 ```
 docker run mohamey/echoclient
 ```
+Please note the docker image sends a hardcoded message, "someMessage".
 
 If you've modified the Dockerfile and wish to rebuild the image, you can do so by changing the working directory to the client directory, and running
 ```
