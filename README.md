@@ -1,6 +1,8 @@
 # Echo Client/Server
 Source code for Distributed systems Lab 1, where the client has been built into the docker image `mohamey/echoclient` and the server built into the image `mohamey/echoserver`. The client is written in Python, the server is the php file as supplied by Stephen Barrett.
 
+Please note that for the docker images provided with my submission, they are built in the context of scssnebula. To run both containers you should create a local network bridge using docker to facilitate the two docker containers communicating with each other.
+
 ## echoclient
 Consists of the one python3 file, `client.py`. It is hard-coded to send the same message "someMessage" to the server every time, and the server is hard-coded to the location of my php server in scssnebula.
 
