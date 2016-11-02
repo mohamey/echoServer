@@ -1,7 +1,8 @@
 import socket
+from sys import argv
 
 # Location of PHP server running in a docker container on Opennebula
-server_address = ('10.62.0.174', 8000)
+server_address = ('0.0.0.0', 8000)
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sock.settimeout(1)
@@ -11,7 +12,11 @@ sock.connect((server_address))
 
 try:
     # Build and send request
-    echoMessage = "someMessage"
+    echoMessage = ""
+    if len(argv) > 1 and type(argv[1]) is str:
+        echoMessage = argv[1]
+    else:
+        echoMessage = "someMessage"
     message = "GET /server.php?message={} HTTP/1.1\n\n".format(echoMessage).encode()
     sock.send(message)
 
